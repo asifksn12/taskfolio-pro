@@ -54,7 +54,7 @@ router.post("/", upload.single("image"), async (req, res) => {
       description: req.body.description,
       userId: req.body.userId,
       image: req.file
-        ? `http://localhost:5000/uploads/${req.file.filename}`
+        ? `https://taskfolio-api-fuqc.onrender.com/uploads/${req.file.filename}`
         : "",
 
     });

@@ -45,7 +45,7 @@ function Dashboard() {
       if (!user?._id) return;
 
       const response = await axios.get(
-        `http://localhost:5000/api/tasks/${user._id}`
+        `https://taskfolio-api-fuqc.onrender.com/api/tasks/${user._id}`
       );
 
       setTasks(response.data);
@@ -106,7 +106,7 @@ function Dashboard() {
       if (editId) {
 
         await axios.put(
-          `http://localhost:5000/api/tasks/${editId}`,
+          `https://taskfolio-api-fuqc.onrender.com/api/tasks/${editId}`,
           {
             title: formData.title,
             description: formData.description,
@@ -131,7 +131,7 @@ function Dashboard() {
         }
 
         await axios.post(
-          "http://localhost:5000/api/tasks",
+          "https://taskfolio-api-fuqc.onrender.com/api/tasks",
           taskData
         );
 
@@ -164,7 +164,7 @@ function Dashboard() {
     try {
 
       await axios.delete(
-        `http://localhost:5000/api/tasks/${id}`
+        `https://taskfolio-api-fuqc.onrender.com/api/tasks/${id}`
       );
 
       toast.success("Task Deleted 🚀");
@@ -198,7 +198,7 @@ function Dashboard() {
     try {
 
       await axios.put(
-        `http://localhost:5000/api/tasks/complete/${id}`
+        `https://taskfolio-api-fuqc.onrender.com/api/tasks/complete/${id}`
       );
 
       toast.success("Task Status Updated 🚀");
